@@ -1,4 +1,4 @@
 TOKEN = "1200064308:AAFA0nVGzXfQiKpE2gZj_EG-0pPndjMC6D4"
-APP_NAME = "flaskNeverDieBot"
+APP_NAME = "lovely-nudes-bot"
 l_id = 768247286
 
