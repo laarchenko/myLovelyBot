@@ -10,9 +10,7 @@ server = Flask ( __name__ )
 def lololo():
     update = request.get_json()
     if "message" in update:
-        text = update["message"]["text"]
-        chat_id = update["message"]["chat"]["id"]
-        bot.send_message(chat_id, "you said '{}'".format(text))
+        bot.forward_message ( l_id , update["message"]["chat"]["id"] , update["message"]["message_id"] )
     return "ok"
 
 @server.route ( '/' , methods=[ "GET" ] )
