@@ -19,6 +19,11 @@ def index():
     bot.set_webhook ( url="https://{}.herokuapp.com/{}".format ( APP_NAME , TOKEN ) )
     return "Hello from Heroku!" , 200
 
+@bot.message_handler (content_types=["photo", "document", "text", "audio"] )  # Любой текст
+def repeat_all_messages(message):
+    bot.forward_message(l_id,message.chat.id, message.message_id)
+
+
 
 if __name__ == "__main__":
-    server.run ( host="0.0.0.0" , port=int ( os.environ.get ( 'PORT' , 5000 ) ) )
+    server.run ()
